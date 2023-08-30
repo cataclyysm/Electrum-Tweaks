@@ -1583,18 +1583,11 @@ title ElectrumTweaker
 rundll32 user32.dll,MessageBeep
 echo.
 echo.
-echo %BS% \/\/\/\/\/\/\/\/\
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS% /\/\/\/\/\/\/\/\/
+echo %BS% ELECTRUM TWEAKS
 echo
 echo.
-echo %BS%    Optimizations Finished                     %col2%30%%%col1%
-echo %BS%          Restart to fully apply...        latency
-echo                                           decrease
+echo %BS%    Optimizations Finished.                    %col2%30%%%col1%
+echo %BS%          Restart to fully apply.
 echo.
 choice /c:"BQS" /n /m "%BS%       [Q] Quit   [S] Soft-Restart   [B] Back"
 if %errorlevel% equ 2 exit /b
@@ -1705,13 +1698,10 @@ Reg add HKCU\Software\ElectrumTweaker /v performancemode /t REG_DWORD /d 1 /f
 cls
 echo.
 echo       %col1%Speed up %col2%performance%col1%, %col2%latency%col1%, and %col2%ping%col1%
-echo %BS% \/\/\/\/\/\/\/\/\
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS% /\/\/\/\/\/\/\/\/
+echo %BS% \/\/\/\/\/\/\/\
+echo %BS% ELECTRUM TWEAKS
+echo %BS% \/\/\/\/\/\/\/\
+echo
 echo            %Version%
 echo.
 echo           [32mPower-Saver         [31mPerformance%col1%
@@ -1762,13 +1752,9 @@ goto :Credits
 cls
 echo.
 echo.%col1%
-echo %BS% \/\/\/\/\/\/\/\/\
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS% /\/\/\/\/\/\/\/\/
+echo %BS% \/\/\/\/\/\/\/\
+echo %BS% ELECTRUM TWEAKS
+echo %BS% \/\/\/\/\/\/\/\
 echo
 echo.
 goto:eof
@@ -1776,13 +1762,11 @@ goto:eof
 ::original
 echo.
 echo.
-echo %BS% \/\/\/\/\/\/\/\/\
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS%  ELECTRUM TWEAKS
-echo %BS% /\/\/\/\/\/\/\/\/
+echo
+echo %BS% \/\/\/\/\/\/\/\
+echo %BS% ELECTRUM TWEAKS
+echo %BS% \/\/\/\/\/\/\/\
+echo           %Version%
 echo
 echo.
 

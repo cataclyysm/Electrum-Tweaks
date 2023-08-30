@@ -1,5 +1,5 @@
 @echo off
-Mode 52,16
+Mode 80,25
 title Electrum Tweaker
 set Version=1.0
 set DevBuild=No
@@ -27,15 +27,15 @@ for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 :DarkMode
 for /f "tokens=3 skip=2" %%a in ('Reg query "HKCU\Software\ElectrumTweaker" /v DarkMode 2^>nul') do set /a "DarkMode=%%a"
 if "%DarkMode%" equ "1" (
-::Text Color Red
+::Text Color Cyan
 set col1=[91m
-::Highlight Color Blue
+::Highlight Color Aqua
 set col2=[94m
 color fc
 ) else (
-::Text Color White
+::Text Color Cyan
 set col1=[97m
-::Highlight Color Red
+::Highlight Color Aqua
 set col2=[31m
 color f
 )
@@ -92,7 +92,7 @@ if "%DevBuild%" neq "Yes" if "%Version%" lss "!latestVersion!" (cls
 	echo.
 	choice /c:"YN" /n /m "%BS%                   [Y] Yes  [N] No"
 	if !errorlevel! equ 1 (
-		curl -L -o "%~s0" "https://github.com/cataclyysm/ElectrumTweaker/releases/latest/download/ElectrumTweaker.bat" >nul 2>&1
+		curl -L -o "%~s0" "https://github.com/cataclyysm/Electrum-Tweaks/blob/main/Electrum%20Tweaker.bat" >nul 2>&1
 		call "%~s0"
 	)
 )
@@ -137,7 +137,7 @@ wmic logicaldisk where "DriveType='3' and DeviceID='%systemdrive%'" get DeviceID
 ::NSudo
 if not exist "%tmp%\NSudo.exe" (
 echo            Downloading NSudo [...]
-curl -g -k -L -# -o "%tmp%\NSudo.exe" "https://github.com/cataclyysm/ElectrumTweaker/raw/main/Files/NSudo.exe" >nul 2>&1
+curl -g -k -L -# -o "%tmp%\NSudo.exe" "https://github.com/cataclyysm/Electrum-Tweaks/blob/main/Files/NSudo.exe" >nul 2>&1
 )
 
 ::Setup NSudo
@@ -219,13 +219,13 @@ Mode 52,16
 cls
 echo.
 echo       %col1%Speed up %col2%performance%col1%, %col2%latency%col1%, and %col2%ping%col1%
-echo %BS%  ___ _        _                    _____                 _       
-echo %BS% | __| |___ __| |_ _ _ _  _ _ __   |_   _|_ __ _____ __ _| |__ ___
-echo %BS% | _|| / -_) _|  _| '_| || | '  \    | | \ V  V / -_) _` | / /(_-<
-echo %BS% |___|_\___\__|\__|_|  \_,_|_|_|_|   |_|  \_/\_/\___\__,_|_\_\/__/
-echo %BS%  __ _/ | /  \ /  \                                               
-echo %BS%  \ V / || () | () |                                              
-echo %BS%   \_/|_(_)__(_)__/
+echo %BS% \/\/\/\/\/\/\/\/\
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS% /\/\/\/\/\/\/\/\/
 echo
 echo           %col1%[%col2%1%col1%] Optimize  [%col2%2%col1%] More
 echo      [%col2%3%col1%] Undo  [%col2%4%col1%] Credits  [%col2%5%col1%] Presets
@@ -369,14 +369,14 @@ call:GrabSettings
 
 if "%NVCP%"=="0x1" (
 echo Downloading NVCP Settings [...]
-if not exist "%tmp%\NPI.zip" curl -g -k -L -# -o "%tmp%\NPI.zip" "https://github.com/Orbmu2k/nvidiaProfileInspector/releases/latest/download/NPI.zip"
-if not exist "%tmp%\NPI" powershell -NoProfile Expand-Archive '%tmp%\NPI.zip' -DestinationPath '%tmp%\NPI\'
+if not exist "%tmp%\nvidiaProfileInspector.zip" curl -g -k -L -# -o "%tmp%\NPI.zip" "https://github.com/Orbmu2k/nvidiaProfileInspector/releases/latest/download/nvidiaProfileInspector.zip"
+if not exist "%tmp%\nvidiaProfileInspector" powershell -NoProfile Expand-Archive '%tmp%\nvidiaProfileInspector.zip' -DestinationPath '%tmp%\nvidiaProfileInspector\'
 curl -g -k -L -# -o "%tmp%\nvidiaProfileInspector\EchoProfile.nip" "https://raw.githubusercontent.com/cataclyysm/ElectrumTweaker/main/Files/ElectrumProfile.nip"
 )
 
 if "%Res%"=="0x1" if not exist "%SystemDrive%\OTR.exe" (
 echo Downloading Timer Resolution [...]
-curl -g -k -L -# -o "%SystemDrive%\OTR.exe" "https://github.com/cataclyysm/ElectrumTweaker/raw/main/Files/OTR.exe" >nul 2>&1
+curl -g -k -L -# -o "%SystemDrive%\OTR.exe" "https://github.com/cataclyysm/Electrum-Tweaks/blob/main/Files/OTR.exe" >nul 2>&1
 )
 
 ::Restore Point
@@ -1583,13 +1583,13 @@ title ElectrumTweaker
 rundll32 user32.dll,MessageBeep
 echo.
 echo.
-echo %BS%  ___ _        _                    _____                 _       
-echo %BS% | __| |___ __| |_ _ _ _  _ _ __   |_   _|_ __ _____ __ _| |__ ___
-echo %BS% | _|| / -_) _|  _| '_| || | '  \    | | \ V  V / -_) _` | / /(_-<
-echo %BS% |___|_\___\__|\__|_|  \_,_|_|_|_|   |_|  \_/\_/\___\__,_|_\_\/__/
-echo %BS%  __ _/ | /  \ /  \                                               
-echo %BS%  \ V / || () | () |                                              
-echo %BS%   \_/|_(_)__(_)__/
+echo %BS% \/\/\/\/\/\/\/\/\
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS% /\/\/\/\/\/\/\/\/
 echo
 echo.
 echo %BS%    Optimizations Finished                     %col2%30%%%col1%
@@ -1645,9 +1645,9 @@ cls
 cd %tmp%
 
 echo Downloading Devmanview [...]
-if not exist "%tmp%\devmanview.exe" curl -g -L -# -o "%tmp%\devmanview.exe" "https://github.com/cataclyysm/ElectrumTweaker/raw/main/Files/DevManView.exe"
+if not exist "%tmp%\devmanview.exe" curl -g -L -# -o "%tmp%\devmanview.exe" "https://github.com/cataclyysm/Electrum-Tweaks/blob/main/Files/DevManView.exe"
 echo Downloading EmptyStandbyList [...]
-if not exist "%tmp%\EmptyStandbyList.exe" curl -g -L -# -o "%tmp%\EmptyStandbyList.exe" "https://cataclyysm/cataclyysm/ElectrumTweaker/raw/main/Files/EmptyStandbyList.exe"
+if not exist "%tmp%\EmptyStandbyList.exe" curl -g -L -# -o "%tmp%\EmptyStandbyList.exe" "https://github.com/cataclyysm/Electrum-Tweaks/blob/main/Files/EmptyStandbyList.exe"
 cls
 
 ::Restart Explorer
@@ -1689,17 +1689,7 @@ Reg add HKCU\Software\ElectrumTweaker /v cstates /t REG_DWORD /d 0 /f
 Reg add HKCU\Software\ElectrumTweaker /v pstates /t REG_DWORD /d 0 /f
 Reg add HKCU\Software\ElectrumTweaker /v sleepstates /t REG_DWORD /d 0 /f
 ) >nul
-if "%opt%" equ "2" (set opt2=[33m
-Reg add HKCU\Software\ElectrumTweaker /v PowMax /t REG_DWORD /d 0 /f
-Reg add HKCU\Software\ElectrumTweaker /v Throttling /t REG_DWORD /d 1 /f
-Reg add HKCU\Software\ElectrumTweaker /v Idle /t REG_DWORD /d 0 /f
-Reg add HKCU\Software\ElectrumTweaker /v KBoost /t REG_DWORD /d 0 /f
-Reg add HKCU\Software\ElectrumTweaker /v Res /t REG_DWORD /d 1 /f
-Reg add HKCU\Software\ElectrumTweaker /v cstates /t REG_DWORD /d 0 /f
-Reg add HKCU\Software\ElectrumTweaker /v pstates /t REG_DWORD /d 0 /f
-Reg add HKCU\Software\ElectrumTweaker /v sleepstates /t REG_DWORD /d 1 /f
-) >nul
-if "%opt%" equ "3" (set opt3=[31m
+if "%opt%" equ "2" (set opt3=[31m
 Reg add HKCU\Software\ElectrumTweaker /v PowMax /t REG_DWORD /d 1 /f
 Reg add HKCU\Software\ElectrumTweaker /v Throttling /t REG_DWORD /d 1 /f
 Reg add HKCU\Software\ElectrumTweaker /v Idle /t REG_DWORD /d 1 /f
@@ -1715,17 +1705,17 @@ Reg add HKCU\Software\ElectrumTweaker /v performancemode /t REG_DWORD /d 1 /f
 cls
 echo.
 echo       %col1%Speed up %col2%performance%col1%, %col2%latency%col1%, and %col2%ping%col1%
-echo %BS%  ___ _        _                    _____                 _       
-echo %BS% | __| |___ __| |_ _ _ _  _ _ __   |_   _|_ __ _____ __ _| |__ ___
-echo %BS% | _|| / -_) _|  _| '_| || | '  \    | | \ V  V / -_) _` | / /(_-<
-echo %BS% |___|_\___\__|\__|_|  \_,_|_|_|_|   |_|  \_/\_/\___\__,_|_\_\/__/
-echo %BS%  __ _/ | /  \ /  \                                               
-echo %BS%  \ V / || () | () |                                              
-echo %BS%   \_/|_(_)__(_)__/
-echo                         %Version%
+echo %BS% \/\/\/\/\/\/\/\/\
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS% /\/\/\/\/\/\/\/\/
+echo            %Version%
 echo.
-echo       [32mPower-Saver   [31mPerformance%col1%
-echo   ^<-------[%opt1%1%col1%]------------[%opt2%2%col1%]------------[%opt3%3%col1%]------^>
+echo           [32mPower-Saver         [31mPerformance%col1%
+echo   ^<-------[%opt1%1%col1%]------------[%opt2%2%col1%]------------^>
 echo.
 choice /c:123BC /n /m "%BS%                 %~1"
 if %errorlevel% geq 4 (goto:eof)
@@ -1758,9 +1748,9 @@ echo %col1%[======================Creator=====================]
 echo.
 echo                     Cataclyysm
 echo.
-echo            Discord Tag: @cataclyysm
+echo            Discord: cataclyysm
 echo.
-echo                  ElectrumTweaker Discord Server
+echo                  Electrum Tweaks Discord Server
 echo        %col2% https://tweaks.electrum.lol %col1%
 echo.
 echo [===============================================P1=]
@@ -1772,27 +1762,29 @@ goto :Credits
 cls
 echo.
 echo.%col1%
-echo %BS%  ___ _        _                    _____                 _       
-echo %BS% | __| |___ __| |_ _ _ _  _ _ __   |_   _|_ __ _____ __ _| |__ ___
-echo %BS% | _|| / -_) _|  _| '_| || | '  \    | | \ V  V / -_) _` | / /(_-<
-echo %BS% |___|_\___\__|\__|_|  \_,_|_|_|_|   |_|  \_/\_/\___\__,_|_\_\/__/
-echo %BS%  __ _/ | /  \ /  \                                               
-echo %BS%  \ V / || () | () |                                              
-echo %BS%   \_/|_(_)__(_)__/
+echo %BS% \/\/\/\/\/\/\/\/\
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS% /\/\/\/\/\/\/\/\/
 echo
+echo.
 goto:eof
 
 ::original
 echo.
 echo.
-echo %BS%  ___ _        _                    _____                 _       
-echo %BS% | __| |___ __| |_ _ _ _  _ _ __   |_   _|_ __ _____ __ _| |__ ___
-echo %BS% | _|| / -_) _|  _| '_| || | '  \    | | \ V  V / -_) _` | / /(_-<
-echo %BS% |___|_\___\__|\__|_|  \_,_|_|_|_|   |_|  \_/\_/\___\__,_|_\_\/__/
-echo %BS%  __ _/ | /  \ /  \                                               
-echo %BS%  \ V / || () | () |                                              
-echo %BS%   \_/|_(_)__(_)__/
-echo                          %Version%
+echo %BS% \/\/\/\/\/\/\/\/\
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS%  ELECTRUM TWEAKS
+echo %BS% /\/\/\/\/\/\/\/\/
+echo
+echo.
 
 :GrabSettings
 ::Power
